@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     
     let request = GETAllCountries()
     var arrayCountries = [Country]()
+    var tempCountry: Country?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,23 +32,32 @@ class HomeViewController: UIViewController {
         self.tableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil), forCellReuseIdentifier: "CountryTableViewCell")
     }
     
-    private func setupTableView() {
-        self.arrayCountries = self.arrayCountries.sorted { ($0.name?.common.lowercased())! < ($1.name?.common.lowercased())! }
-        self.tableView.reloadData()
-    }
-    
     private func loadCountryArray() {
         Prog.start(in: self, .activityIndicator)
         request.fetchCountries { data in
             self.arrayCountries = data
-            self.setupTableView()
+            self.arrayCountries = self.arrayCountries.sorted { ($0.name?.common.lowercased())! < ($1.name?.common.lowercased())! }
+            self.tableView.reloadData()
             Prog.end(in: self)
+        }
+    }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDetailVC" {
+            if let navVC = segue.destination as? UINavigationController,
+                let destVC = navVC.viewControllers.first as? DetailViewController {
+                destVC.country = self.tempCountry
+            }
         }
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueToDetailVC", sender: nil)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -57,10 +67,10 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as? CountryTableViewCell {
-            let countryObject = self.arrayCountries[indexPath.row]
-            cell.labelName.text = countryObject.name?.common
-//            cell.labelName.text = countryObject.capital?[0]
-            if let imgURL = URL(string: countryObject.flags!.png) {
+            let country = self.arrayCountries[indexPath.row]
+            self.tempCountry = country
+            cell.labelName.text = country.name?.common
+            if let imgURL = URL(string: country.flags!.png) {
                 cell.imgView.setImageWith(imgURL, placeholderImage: #imageLiteral(resourceName: "placeholder-image"))
             }
             return cell
