@@ -13,5 +13,6 @@ target 'country-select' do
   pod 'Alamofire'
   pod 'Progress'
   pod 'UIImageView_AFNetworking-Blocks'
+  pod 'ShimmerSwift'
   
 end

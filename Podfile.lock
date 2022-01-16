@@ -28,6 +28,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (5.0.0)
   - Progress (3.0)
+  - ShimmerSwift (2.1.1)
   - UIImageView_AFNetworking-Blocks (0.1.0):
     - AFNetworking (~> 2.0)
 
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - Progress
+  - ShimmerSwift
   - UIImageView_AFNetworking-Blocks
 
 SPEC REPOS:
@@ -45,6 +47,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - Progress
+    - ShimmerSwift
     - UIImageView_AFNetworking-Blocks
 
 SPEC CHECKSUMS:
@@ -53,8 +56,9 @@ SPEC CHECKSUMS:
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   Progress: ba9d35a566ac1b3752bf077326f2775c7cee1b80
+  ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
   UIImageView_AFNetworking-Blocks: 77b5ada4b4a0a1925e4c86cad1f9c3271b8e773f
 
-PODFILE CHECKSUM: 7c0c2b01603d0c579f4650627002d5edcfd2cb57
+PODFILE CHECKSUM: 8e893d515870cfa22f20a5ceebc4ae776e6041fb
 
 COCOAPODS: 1.11.2

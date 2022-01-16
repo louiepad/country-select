@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sDy-BF-1sS">
-                                <rect key="frame" x="20" y="0.0" width="374" height="842"/>
+                                <rect key="frame" x="20" y="0.0" width="374" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="txP-IO-orV" customClass="CountryTableViewCell" customModule="country_select" customModuleProvider="target">
@@ -32,22 +32,61 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sDy-BF-1sS" secondAttribute="trailing" constant="20" id="9Y1-yA-dCY"/>
                             <constraint firstItem="sDy-BF-1sS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rtQ-Dr-PvK"/>
-                            <constraint firstItem="sDy-BF-1sS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="xCc-Zq-wVs"/>
+                            <constraint firstItem="sDy-BF-1sS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xCc-Zq-wVs"/>
                             <constraint firstItem="sDy-BF-1sS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yQR-Wy-370"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lXm-FE-Jkf"/>
                     <connections>
                         <outlet property="tableView" destination="sDy-BF-1sS" id="DaG-1D-uVg"/>
+                        <segue destination="DmV-02-ISb" kind="presentation" identifier="segueToDetailVC" id="U5E-fO-7tM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="721.73913043478262" y="50.892857142857139"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="4C2-0Z-toS">
+            <objects>
+                <viewController id="DmV-02-ISb" customClass="DetailViewController" customModule="country_select" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LlW-0X-tQn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H09-7Q-b7e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xOR-HQ-2eE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xOR-HQ-2eE" firstAttribute="top" secondItem="H09-7Q-b7e" secondAttribute="top" id="06d-YM-mqI"/>
+                                    <constraint firstAttribute="trailing" secondItem="xOR-HQ-2eE" secondAttribute="trailing" id="GlB-tj-Zyc"/>
+                                    <constraint firstAttribute="bottom" secondItem="xOR-HQ-2eE" secondAttribute="bottom" id="Uek-FI-HZf"/>
+                                    <constraint firstItem="xOR-HQ-2eE" firstAttribute="leading" secondItem="H09-7Q-b7e" secondAttribute="leading" id="iYE-Sz-ImP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g3H-BB-bnB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H09-7Q-b7e" firstAttribute="top" secondItem="g3H-BB-bnB" secondAttribute="top" id="QEd-ep-XsZ"/>
+                            <constraint firstItem="H09-7Q-b7e" firstAttribute="leading" secondItem="g3H-BB-bnB" secondAttribute="leading" id="XxM-rf-jbE"/>
+                            <constraint firstItem="g3H-BB-bnB" firstAttribute="trailing" secondItem="H09-7Q-b7e" secondAttribute="trailing" id="azy-4H-BT1"/>
+                            <constraint firstItem="g3H-BB-bnB" firstAttribute="bottom" secondItem="H09-7Q-b7e" secondAttribute="bottom" id="g8x-ib-2Rx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-qW-7bv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uDx-3H-crB">

@@ -12,6 +12,7 @@
 		DF3E77852794230400691235 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E77842794230400691235 /* CountryTableViewCell.swift */; };
 		DF3E778727942A3B00691235 /* CountryTableViewCell.swift in Resources */ = {isa = PBXBuildFile; fileRef = DF3E77842794230400691235 /* CountryTableViewCell.swift */; };
 		DF3E778927942B8B00691235 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF3E778827942B8B00691235 /* CountryTableViewCell.xib */; };
+		DF3E778B27944F3E00691235 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E778A27944F3E00691235 /* DetailViewController.swift */; };
 		DF66457727939DD900B6C7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66457627939DD900B6C7E3 /* AppDelegate.swift */; };
 		DF66457927939DD900B6C7E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66457827939DD900B6C7E3 /* SceneDelegate.swift */; };
 		DF66457E27939DD900B6C7E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF66457C27939DD900B6C7E3 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		DF3E77812794206500691235 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF3E77842794230400691235 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		DF3E778827942B8B00691235 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		DF3E778A27944F3E00691235 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF66457327939DD900B6C7E3 /* country-select.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "country-select.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF66457627939DD900B6C7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF66457827939DD900B6C7E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DF3E77812794206500691235 /* HomeViewController.swift */,
+				DF3E778A27944F3E00691235 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				DF3E77822794206500691235 /* HomeViewController.swift in Sources */,
 				DF3E77852794230400691235 /* CountryTableViewCell.swift in Sources */,
 				DF66457927939DD900B6C7E3 /* SceneDelegate.swift in Sources */,
+				DF3E778B27944F3E00691235 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

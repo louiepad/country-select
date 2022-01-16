@@ -25,12 +25,14 @@ class HomeViewController: UIViewController {
     }
 
     private func setupView() {
+        self.title = "Select a Country"
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil), forCellReuseIdentifier: "CountryTableViewCell")
     }
     
     private func setupTableView() {
+        self.arrayCountries = self.arrayCountries.sorted { ($0.name?.common.lowercased())! < ($1.name?.common.lowercased())! }
         self.tableView.reloadData()
     }
     
@@ -57,7 +59,7 @@ extension HomeViewController: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as? CountryTableViewCell {
             let countryObject = self.arrayCountries[indexPath.row]
             cell.labelName.text = countryObject.name?.common
-            
+//            cell.labelName.text = countryObject.capital?[0]
             if let imgURL = URL(string: countryObject.flags!.png) {
                 cell.imgView.setImageWith(imgURL, placeholderImage: #imageLiteral(resourceName: "placeholder-image"))
             }

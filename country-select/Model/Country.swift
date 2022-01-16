@@ -8,46 +8,34 @@
 import Foundation
 
 struct Name: Codable {
-    var common, official: String
-    
-    enum CodingKeys: String, CodingKey {
-        case common
-        case official
-    }
+    let common, official: String
 }
 
 struct Flag: Codable {
-    var png, svg: String
-    
-    enum CodingKeys: String, CodingKey {
-        case png
-        case svg
-    }
+    let png, svg: String
+}
+
+struct Maps: Codable {
+    let googleMaps, openStreetMaps: String
 }
 
 struct Country:  Codable {
-    var name: Name?
-    var currencies: [String]?
-    var capital: [String]?
-    var region: String?
-    var subRegion: String?
-    var languages: [String]?
-    var area: Double?
-    var demonyms: [String]?
-    var maps: [String]?
-    var population: Double?
-    var timezones: [String]?
-    var flags: Flag?
+    let name: Name?
+    let capital: [String]?
+    let region: String?
+    let subRegion: String?
+    let area: Double?
+    let maps: Maps?
+    let population: Double?
+    let timezones: [String]?
+    let flags: Flag?
     
     enum CodingKeys: String, CodingKey {
         case name
-        case currencies
         case capital
         case region
         case subRegion = "subregion"
-        case languages
         case area
-        case demonyms
         case maps
         case population
         case timezones
@@ -57,13 +45,10 @@ struct Country:  Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = container.decodeSafely(.name)
-        self.currencies = container.decodeSafely(.currencies)
         self.capital = container.decodeSafely(.capital)
         self.region = container.decodeSafely(.region)
         self.subRegion = container.decodeSafely(.subRegion)
-        self.languages = container.decodeSafely(.languages)
         self.area = container.decodeSafely(.area)
-        self.demonyms = container.decodeSafely(.demonyms)
         self.maps = container.decodeSafely(.maps)
         self.population = container.decodeSafely(.population)
         self.timezones = container.decodeSafely(.timezones)
