@@ -58,7 +58,11 @@ class DetailViewController: UIViewController {
         }
         
         let population: Double = country?.population ?? 0
-        populationLabel.text = String(format: "         %@ CITIZENS", formatNumber(toFormat: population))
+        populationLabel.text = String(format: "%@ CITIZENS", formatNumber(toFormat: population))
+        
+        if let mapURL = URL(string: country?.maps?.googleMaps ?? "") {
+            webView.load(URLRequest(url: mapURL))
+        }
     }
     
     private func formatNumber(toFormat: Double) -> String {
