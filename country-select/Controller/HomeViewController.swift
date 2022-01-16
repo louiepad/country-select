@@ -46,8 +46,7 @@ class HomeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToDetailVC" {
-            if let navVC = segue.destination as? UINavigationController,
-                let destVC = navVC.viewControllers.first as? DetailViewController {
+            if let destVC = segue.destination as? DetailViewController {
                 destVC.country = self.tempCountry
             }
         }
@@ -56,6 +55,8 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let country = self.arrayCountries[indexPath.row]
+        self.tempCountry = country
         performSegue(withIdentifier: "segueToDetailVC", sender: nil)
     }
 }
@@ -68,7 +69,6 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as? CountryTableViewCell {
             let country = self.arrayCountries[indexPath.row]
-            self.tempCountry = country
             cell.labelName.text = country.name?.common
             if let imgURL = URL(string: country.flags!.png) {
                 cell.imgView.setImageWith(imgURL, placeholderImage: #imageLiteral(resourceName: "placeholder-image"))
