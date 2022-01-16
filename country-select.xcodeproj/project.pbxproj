@@ -10,6 +10,8 @@
 		BDA4870F9449DF0300E0385E /* Pods_country_select.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469677F4740A82257647F09D /* Pods_country_select.framework */; };
 		DF3E77822794206500691235 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E77812794206500691235 /* HomeViewController.swift */; };
 		DF3E77852794230400691235 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E77842794230400691235 /* CountryTableViewCell.swift */; };
+		DF3E778727942A3B00691235 /* CountryTableViewCell.swift in Resources */ = {isa = PBXBuildFile; fileRef = DF3E77842794230400691235 /* CountryTableViewCell.swift */; };
+		DF3E778927942B8B00691235 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF3E778827942B8B00691235 /* CountryTableViewCell.xib */; };
 		DF66457727939DD900B6C7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66457627939DD900B6C7E3 /* AppDelegate.swift */; };
 		DF66457927939DD900B6C7E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66457827939DD900B6C7E3 /* SceneDelegate.swift */; };
 		DF66457E27939DD900B6C7E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF66457C27939DD900B6C7E3 /* Main.storyboard */; };
@@ -45,6 +47,7 @@
 		CCDF874A14849EB2675CECD6 /* Pods-country-select.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-country-select.debug.xcconfig"; path = "Target Support Files/Pods-country-select/Pods-country-select.debug.xcconfig"; sourceTree = "<group>"; };
 		DF3E77812794206500691235 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF3E77842794230400691235 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		DF3E778827942B8B00691235 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		DF66457327939DD900B6C7E3 /* country-select.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "country-select.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF66457627939DD900B6C7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF66457827939DD900B6C7E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				DF3E77842794230400691235 /* CountryTableViewCell.swift */,
+				DF3E778827942B8B00691235 /* CountryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,9 +314,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3E778727942A3B00691235 /* CountryTableViewCell.swift in Resources */,
 				DF66458327939DDD00B6C7E3 /* LaunchScreen.storyboard in Resources */,
 				DF66458027939DDD00B6C7E3 /* Assets.xcassets in Resources */,
 				DF66457E27939DD900B6C7E3 /* Main.storyboard in Resources */,
+				DF3E778927942B8B00691235 /* CountryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

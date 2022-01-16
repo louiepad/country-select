@@ -1,4 +1,25 @@
 PODS:
+  - AFNetworking (2.7.0):
+    - AFNetworking/NSURLConnection (= 2.7.0)
+    - AFNetworking/NSURLSession (= 2.7.0)
+    - AFNetworking/Reachability (= 2.7.0)
+    - AFNetworking/Security (= 2.7.0)
+    - AFNetworking/Serialization (= 2.7.0)
+    - AFNetworking/UIKit (= 2.7.0)
+  - AFNetworking/NSURLConnection (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.7.0)
+  - AFNetworking/Security (2.7.0)
+  - AFNetworking/Serialization (2.7.0)
+  - AFNetworking/UIKit (2.7.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Alamofire (5.4.3)
   - GoogleMaps (5.1.0):
     - GoogleMaps/Maps (= 5.1.0)
@@ -6,23 +27,34 @@ PODS:
   - GoogleMaps/Maps (5.1.0):
     - GoogleMaps/Base
   - GooglePlaces (5.0.0)
+  - Progress (3.0)
+  - UIImageView_AFNetworking-Blocks (0.1.0):
+    - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
   - Alamofire
   - GoogleMaps
   - GooglePlaces
+  - Progress
+  - UIImageView_AFNetworking-Blocks
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - Alamofire
     - GoogleMaps
     - GooglePlaces
+    - Progress
+    - UIImageView_AFNetworking-Blocks
 
 SPEC CHECKSUMS:
+  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
+  Progress: ba9d35a566ac1b3752bf077326f2775c7cee1b80
+  UIImageView_AFNetworking-Blocks: 77b5ada4b4a0a1925e4c86cad1f9c3271b8e773f
 
-PODFILE CHECKSUM: d9e0f04b12d163c24a40fb951bac9b2141215cec
+PODFILE CHECKSUM: 7c0c2b01603d0c579f4650627002d5edcfd2cb57
 
 COCOAPODS: 1.11.2

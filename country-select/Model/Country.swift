@@ -7,33 +7,51 @@
 
 import Foundation
 
-struct Country:  Codable {
-    let name: [String]?
-    let currencies: [String]?
-    let capital: [String]?
-    let region: String?
-    let subRegion: String?
-    let languages: [String]?
-    let area: Double?
-    let demonyms: [String]?
-    let maps: [String]?
-    let population: Double?
-    let timezones: [String]?
-    let flags: [String]?
+struct Name: Codable {
+    var common, official: String
     
     enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case currencies = "currencies"
-        case capital = "capital"
-        case region = "region"
+        case common
+        case official
+    }
+}
+
+struct Flag: Codable {
+    var png, svg: String
+    
+    enum CodingKeys: String, CodingKey {
+        case png
+        case svg
+    }
+}
+
+struct Country:  Codable {
+    var name: Name?
+    var currencies: [String]?
+    var capital: [String]?
+    var region: String?
+    var subRegion: String?
+    var languages: [String]?
+    var area: Double?
+    var demonyms: [String]?
+    var maps: [String]?
+    var population: Double?
+    var timezones: [String]?
+    var flags: Flag?
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case currencies
+        case capital
+        case region
         case subRegion = "subregion"
-        case languages = "languages"
-        case area = "area"
-        case demonyms = "demonyms"
-        case maps = "maps"
-        case population = "population"
-        case timezones = "timezones"
-        case flags = "flags"
+        case languages
+        case area
+        case demonyms
+        case maps
+        case population
+        case timezones
+        case flags
     }
     
     init(from decoder: Decoder) throws {
@@ -52,6 +70,5 @@ struct Country:  Codable {
         self.flags = container.decodeSafely(.flags)
     }
 }
-
 
 

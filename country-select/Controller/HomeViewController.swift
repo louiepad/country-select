@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Progress
+import UIImageView_AFNetworking_Blocks
 
 class HomeViewController: UIViewController {
 
@@ -25,18 +27,19 @@ class HomeViewController: UIViewController {
     private func setupView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        let customCell = UINib(nibName: "CountryTableViewCell", bundle: nil)
-        self.tableView.register(customCell, forCellReuseIdentifier: "CountryTableViewCell")
+        self.tableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil), forCellReuseIdentifier: "CountryTableViewCell")
     }
     
     private func setupTableView() {
-        
+        self.tableView.reloadData()
     }
     
     private func loadCountryArray() {
+        Prog.start(in: self, .activityIndicator)
         request.fetchCountries { data in
             self.arrayCountries = data
             self.setupTableView()
+            Prog.end(in: self)
         }
     }
 }
@@ -52,9 +55,19 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as? CountryTableViewCell {
+            let countryObject = self.arrayCountries[indexPath.row]
+            cell.labelName.text = countryObject.name?.common
+            
+            if let imgURL = URL(string: countryObject.flags!.png) {
+                cell.imgView.setImageWith(imgURL, placeholderImage: #imageLiteral(resourceName: "placeholder-image"))
+            }
             return cell
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

@@ -11,5 +11,7 @@ target 'country-select' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'Alamofire'
+  pod 'Progress'
+  pod 'UIImageView_AFNetworking-Blocks'
   
 end
